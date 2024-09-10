@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/product.js": {
+    "api/product": {
       "maxDuration": 70
     }
   }
