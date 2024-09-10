@@ -1,6 +1,8 @@
 import { MongoClient } from "mongodb";
+MONGODB_URI =
+  "mongodb+srv://towhid:9sb1LYihQWrDQs9H@rapid.5nlg7.mongodb.net/?retryWrites=true&w=majority&appName=rapid";
 
-const client = new MongoClient(process.env.MONGODB_URI, {
+const client = new MongoClient(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
