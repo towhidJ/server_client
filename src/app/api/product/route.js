@@ -33,7 +33,7 @@ export async function POST(request) {
 
   try {
     const client = await clientPromise;
-    const db = client.db("survive"); // Replace with your actual DB name
+    const db = client.db("survive");
 
     const result = await db.collection("products").insertOne({
       productName,
