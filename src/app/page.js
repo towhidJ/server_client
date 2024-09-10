@@ -3,7 +3,10 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Swal from "sweetalert2";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { RingLoader } from "react-spinners";
+import { useState } from "react";
 const Home = () => {
+  const [loading, setLoading] = useState(false); // Add loading state
   const schema = z.object({
     productName: z.string().nonempty("Product Name is required"),
     description: z.string().nonempty("Please type your product review"),
@@ -22,6 +25,7 @@ const Home = () => {
   });
 
   const onSubmit = async (data) => {
+    setLoading(true); // Start loading
     try {
       console.log(data);
       const response = await fetch("/api/product", {
@@ -53,9 +57,10 @@ const Home = () => {
         title: "Oops...",
         text: error.message,
       });
+    } finally {
+      setLoading(false); // End loading
+      reset();
     }
-
-    reset();
   };
   return (
     <>
@@ -184,7 +189,11 @@ const Home = () => {
                   type="submit"
                   className="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
                 >
-                  ক্লিক
+                  {loading ? (
+                    <RingLoader color="#ffffff" size={24} /> // Show spinner when loading
+                  ) : (
+                    "ক্লিক"
+                  )}
                 </button>
               </div>
             </div>
