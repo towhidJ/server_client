@@ -56,7 +56,7 @@ const Home = () => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: error.message,
+        text: "Faield",
       });
     } finally {
       setLoading(false); // End loading
@@ -67,8 +67,8 @@ const Home = () => {
     <>
       <div className="bg-gray-200 mt-3 mx-auto max-w-6xl bg-white py-20 px-12 lg:px-24 shadow-xl mb-24">
         <h1 className="text-center pb-5 text-4xl font-bold text-cyan-900">
-          আপনার উজ্জ্বল ও সুন্দর ত্বকের যত্ন ব্যাবহিত প্রসাধনী গুলো নাম ও রিভিও
-          দিন।
+          আপনার উজ্জ্বল ও সুন্দর ত্বকের যত্নে ব্যাবহিত প্রসাধনী গুলোর নাম ও
+          রিভিও দিন।
         </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
