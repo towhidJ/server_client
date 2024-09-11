@@ -13,8 +13,8 @@ const Review = async () => {
       <div className="container mt-5 mb-2">
         <div className="text-center">
           <h1 className="search-text">
-            List
-            <span className="search-heading-text"> Review</span>
+            List of
+            <span className="search-heading-text">Review</span>
           </h1>
           <hr />
         </div>
