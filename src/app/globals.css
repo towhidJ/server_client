@@ -25,3 +25,12 @@ body {
     text-wrap: balance;
   }
 }
+.search-text {
+  font-size: 48px;
+  font-weight: 900;
+  font-family: 'Alfa Slab One', cursive;
+}
+.search-heading-text {
+  color: darkgoldenrod;
+  text-decoration: underline;
+}

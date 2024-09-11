@@ -5,6 +5,8 @@ import Swal from "sweetalert2";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RingLoader } from "react-spinners";
 import { useState } from "react";
+import Image from "next/image";
+import { banner } from "../../public/banner.jpg";
 const Home = () => {
   const [loading, setLoading] = useState(false); // Add loading state
   //
@@ -65,6 +67,15 @@ const Home = () => {
   };
   return (
     <>
+      <div style={{ height: "200px", width: "100%", position: "relative" }}>
+        <h1>Fixed Height Image Example</h1>
+        <Image
+          src="/banner.jpg" // Path to your image in the public folder
+          alt="Banner"
+          layout="fill" // Makes the image fill the parent container
+          objectFit="cover" // Ensures the image covers the container without distortion
+        />
+      </div>
       <div className="bg-gray-200 mt-3 mx-auto max-w-6xl bg-white py-20 px-12 lg:px-24 shadow-xl mb-24">
         <h1 className="text-center pb-5 text-4xl font-bold text-cyan-900">
           আপনার উজ্জ্বল ও সুন্দর ত্বকের যত্নে ব্যাবহিত প্রসাধনী গুলোর নাম ও
@@ -188,10 +199,10 @@ const Home = () => {
               <div className="md:w-full px-3">
                 <button
                   type="submit"
-                  className="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
+                  className="w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full"
                 >
                   {loading ? (
-                    <RingLoader color="#ffffff" size={24} /> // Show spinner when loading
+                    <RingLoader color="#C8FF00FF" size={24} /> // Show spinner when loading
                   ) : (
                     "ক্লিক"
                   )}

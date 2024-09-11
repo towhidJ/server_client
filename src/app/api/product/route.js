@@ -53,3 +53,21 @@ export async function POST(request) {
     });
   }
 }
+
+export async function GET(request) {
+  try {
+    // Connect to the database
+    const client = await clientPromise;
+    const db = client.db("survive");
+
+    // Fetch all products
+    const products = await db.collection("products").find({}).toArray();
+
+    return new Response(JSON.stringify({ products }), { status: 200 });
+  } catch (error) {
+    console.error("Error in GET /api/products:", error);
+    return new Response(JSON.stringify({ message: "Internal server error" }), {
+      status: 500,
+    });
+  }
+}
