@@ -1,7 +1,7 @@
 const fetchProducts = async () => {
   const res = await fetch(`${process.env.API_URL}/api/product`);
   if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    throw new Error("Failed to fetch product");
   }
   const data = await res.json();
   return data.products || [];
