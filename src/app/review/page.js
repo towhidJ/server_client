@@ -1,5 +1,5 @@
 const fetchProducts = async () => {
-  const res = await fetch(`${process.env.API_URL}/api/product`);
+  const res = await fetch(`https://sbcosmetics.vercel.app/api/product`);
   if (!res.ok) {
     throw new Error("Failed to fetch product");
   }
