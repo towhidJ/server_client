@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/product/route.js": {
-      "maxDuration": 80
-    }
-  }
-}
