@@ -10,7 +10,7 @@ const Home = () => {
   //
   const schema = z.object({
     productName: z.string().nonempty("Product Name is required"),
-    description: z.string().nonempty("Please type your product review"),
+    description: z.string(),
     mobileNo: z.string(),
     customerName: z.string().nonempty("Please type your Name"),
     brandName: z.string(),
