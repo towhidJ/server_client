@@ -1,3 +1,6 @@
+"use client";
+import { useEffect, useState } from "react";
+
 const fetchProducts = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/product`
@@ -8,8 +11,22 @@ const fetchProducts = async () => {
   const data = await res.json();
   return data.products || [];
 };
-const Review = async () => {
-  const products = await fetchProducts();
+const Review = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const products = await fetchProducts();
+        setProducts(products);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
+    };
+
+    loadProducts();
+  }, []);
+
   return (
     <div className=" mx-14 px-5">
       <div className="container mt-5 mb-2">
